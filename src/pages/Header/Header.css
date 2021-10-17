@@ -1,0 +1,63 @@
+.header{
+    text-align: center;
+}
+.letter-spacing-sm{
+    letter-spacing: 0.1rem;
+}
+.letter-spacing-md{
+    letter-spacing: 0.2rem;
+}
+.button{
+    border: none;
+    border-bottom:4px solid black;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-weight: bold;
+    background: none;
+    color: white;
+    transition: 0.2s ease;
+}
+.button:hover{
+    background-color: black;
+    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.75);
+}
+.vaccine-button{
+    margin: 0 10px;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 7px 15px;
+    font-weight: bold;
+    background: none;
+    color: red;
+    animation: before-hover 2s infinite;
+}
+@keyframes before-hover {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0px 0px 15px 5px red;
+    }
+    1000% {
+        box-shadow: none;
+    }
+  }
+.vaccine-button:hover{
+    border: 2px solid green;
+    color: green;
+    animation: after-hover 2s infinite;
+}
+@keyframes after-hover {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0px 0px 15px 5px green;
+    }
+    100%{
+        box-shadow: none;
+    }
+  }
+.selected{
+    background-color: black;
+  }
