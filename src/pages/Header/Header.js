@@ -1,13 +1,17 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
+    const { user, logOut } = useAuth();
+
+    console.log(user)
 
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <div className="border header-logo rounded-pill px-3 py-1">
@@ -23,9 +27,15 @@ const Header = () => {
                             <Nav.Link as={Link} to="/about"><button className="button">About</button></Nav.Link>
                             <Nav.Link as={Link} to="/vaccine"><button className="vaccine-button">Covid-19 Vaccine</button></Nav.Link>
                         </Nav>
+
                         <Nav>
-                            <Nav.Link as={Link} to="/login"><button className="button"><i className="fas fa-sign-in-alt"></i> Login</button></Nav.Link>
-                            <Nav.Link as={Link} to="/login"><button className="button"><i className="fas fa-sign-out-alt"></i> Logout</button></Nav.Link>
+                            {
+                                !user.email ?
+                                    <Nav.Link as={Link} to="/login"><button className="button"><i className="fas fa-sign-in-alt"></i> Login</button></Nav.Link>
+                                    :
+                                    <div><p className="text-white d-md-inline me-md-3">{user.displayName}</p>
+                                        <button onClick={logOut} className="button"><i className="fas fa-sign-out-alt"></i> Logout</button></div>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
