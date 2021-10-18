@@ -1,0 +1,15 @@
+.vaccine{
+    background-color: #006778;
+    /* color: #006778; */
+}
+.vaccine-card p, .vaccine-card i{
+    color: #006778;
+
+}
+.i{
+    font-size: 50px;
+}
+.vaccine-card p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -26,7 +26,7 @@ const Appoinment = () => {
     return (
         <div className="appoinment-bg">
             <div className="container py-5">
-                <div className="appoinment-cover p-4 align-items-center d-md-flex justify-content-around  text-white">
+                <div className="appoinment-cover p-4 align-items-center d-flex flex-column flex-md-row justify-content-around  text-white">
                     <div className="cover-details mb-md-0 mb-4">
                         <h2>{doctor?.name}</h2>
                         <hr />
@@ -45,11 +45,11 @@ const Appoinment = () => {
                     </div>
                 </div>
                 <div className="row text-white my-5">
-                    <div className="col-6 px-2 px-md-5">
+                    <div className="col-md-6 p-3 px-md-5">
                         <h3 className="text-success">About {doctor?.name}</h3>
                         <p>{doctor?.details}</p>
                     </div>
-                    <div className="col-6 p-2 px-md-5" id="appoinment-form">
+                    <div className="col-md-6 p-2 px-md-5" id="appoinment-form">
                         {appoinment ?
                             <div className="py-5 px-md-5 rounded appoinment-form">
                                 <h2 className="py-2"><i className="fas fa-check-circle text-success"></i>  Thank You for Take an Appoinment</h2>

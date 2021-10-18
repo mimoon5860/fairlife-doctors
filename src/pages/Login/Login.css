@@ -1,6 +1,7 @@
 .login-bg{
    background-image: url("../../images/loginbg2.png"); 
    background-attachment: fixed;
+   min-height: 85vh;
 }
 .form{
     background-color: rgba(51, 94, 89, 0.6);

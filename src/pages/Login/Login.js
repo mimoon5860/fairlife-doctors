@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 import SignIn from './Login/SignIn';
@@ -61,25 +62,21 @@ const Login = () => {
     }
 
 
-
-
-
-
-
     const handleToggle = event => {
         setToggle(event.target.checked);
     }
 
 
-
-
-
-
     return (
-        <div className="login-bg">
+        <div className="login-bg py-5">
             <div className="container py-5">
 
-                {user.email ? <div><h1>You Already Logged in.</h1></div> :
+                {user.email ?
+                    <div className="py-5 text-center">
+                        <h1 className=" text-success py-5">You Already Logged in!</h1>
+                        <Link className="btn btn-success" to="/">Back To Home</Link>
+                    </div>
+                    :
                     <div className="col-md-3 mx-auto my-md-5 p-3 my-3 border rounded form">
 
                         {!toggle ?

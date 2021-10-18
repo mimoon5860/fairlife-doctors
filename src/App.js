@@ -11,16 +11,18 @@ import HealthCare from './pages/Healthcare/HealthCare';
 import Appoinment from './pages/Appoinment/Appoinment';
 import AuthProvidor from './Hooks/AuthProvidor/AuthProvidor';
 import PrivateRoute from './Hooks/PrivateRoute/PrivateRoute';
+import Footer from './pages/Footer/Footer';
 
 const style = {
-  fontFamily: "'Lato', sans- serif"
+  fontFamily: "'Lato', sans- serif",
+  minHeight: "95vh"
 }
 
 function App() {
   return (
     <AuthProvidor>
-      <div style={style}>
-        <Router>
+      <Router>
+        <div style={style}>
           <Header></Header>
           <Switch>
             <Route exact path="/">
@@ -51,8 +53,9 @@ function App() {
               <Error></Error>
             </Route>
           </Switch>
-        </Router>
-      </div>
+        </div>
+        <Footer></Footer>
+      </Router>
     </AuthProvidor>
   );
 }

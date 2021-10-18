@@ -27,8 +27,8 @@ const Cover = () => {
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>First slide label</h5>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <h5>We Have The Best Specialist</h5>
+                                    <p>Take appoinment and meet with your specialist doctor.</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -38,8 +38,8 @@ const Cover = () => {
                                     alt="Second slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>Second slide label</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5>Child Care</h5>
+                                    <p>We Have best child specilist for your childreen</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -49,8 +49,8 @@ const Cover = () => {
                                     alt="Third slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>Third slide label</h5>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h5>Woman's Care</h5>
+                                    <p>We Have Best Woman Specialist</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -60,8 +60,8 @@ const Cover = () => {
                                     alt="Third slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>Third slide label</h5>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h5>We Research</h5>
+                                    <p>We Research About Your Problems</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -71,8 +71,8 @@ const Cover = () => {
                                     alt="Third slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>Third slide label</h5>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h5>Therapy Specialist</h5>
+                                    <p>We have the best therapy specialist</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         </Carousel>

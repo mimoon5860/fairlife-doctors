@@ -25,7 +25,7 @@ const Header = () => {
                             <Nav.Link as={NavLink} className="vaccine-button text-danger" to="/vaccine">Covid-19 Vaccine</Nav.Link>
                         </Nav>
 
-                        <Nav>
+                        <Nav className="d-flex align-items-center">
                             {
                                 !user.email ?
                                     <Nav.Link as={NavLink} activeClassName="active" className="button" to="/login"><i className="fas fa-sign-in-alt"></i> Login</Nav.Link>
