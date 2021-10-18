@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="bg-dark">
             <div className="container text-white flex-column pt-3 flex-md-row d-flex justify-content-between align-items-center">
                 <div>
-                    <div className="fw-bold d-flex">
+                    <div className="d-flex footer-links">
                         <ul>
                             <Link to="/about"><li>About</li></Link>
                             <Link to="/contact"><li>Contact</li></Link>

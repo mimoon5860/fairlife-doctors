@@ -11,13 +11,14 @@ const Login = () => {
     const [toggle, setToggle] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const [error, setError] = useState("");
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home';
     // console.log(location.state.from)
 
-    const { user, googleSignIn, emailRegister, emailSignIn } = useAuth();
+    const { user, googleSignIn, emailRegister, updateUser, emailSignIn } = useAuth();
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -35,35 +36,56 @@ const Login = () => {
     const handlePassword = (event) => {
         setPassword(event.target.value);
     }
+    const handleName = (event) => {
+        setName(event.target.value);
+    }
 
     const handleRegister = (event) => {
         event.preventDefault();
-        emailRegister(email, password)
-            .then((userCredential) => {
-                history.push(redirect_uri)
-                setError("")
-            })
-            .catch((error) => {
-                setError(error.message);
-            });
+        if (password.length >= 6) {
+            emailRegister(email, password)
+                .then((userCredential) => {
+                    history.push(redirect_uri)
+                    setError("")
+                    updateUser(name)
+                        .then(() => {
+
+                        }).catch((error) => {
+                            setError(error?.massage)
+                        });
+                    console.log(name)
+                })
+                .catch((error) => {
+                    setError(error.message);
+                });
+        }
+        else {
+            setError("Password must be six length")
+        }
+
 
     }
 
     const handleSignIn = (event) => {
         event.preventDefault();
-        emailSignIn(email, password)
-            .then((userCredential) => {
-                history.push(redirect_uri)
-                setError("")
-            })
-            .catch((error) => {
-                setError(error.message);
-            });
+        if (password.length >= 6) {
+            emailSignIn(email, password)
+                .then((userCredential) => {
+                    history.push(redirect_uri)
+                    setError("")
+                })
+                .catch((error) => {
+                    setError(error.message);
+                });
+        } else {
+            setError("Password must be six length")
+        }
     }
 
 
     const handleToggle = event => {
         setToggle(event.target.checked);
+        setError("")
     }
 
 
@@ -82,7 +104,7 @@ const Login = () => {
                         {!toggle ?
                             <SignIn handleEmail={handleEmail} handlePassword={handlePassword} handleSignIn={handleSignIn}></SignIn>
                             :
-                            <Register handleEmail={handleEmail} handlePassword={handlePassword} handleRegister={handleRegister}></Register>
+                            <Register handleName={handleName} handleEmail={handleEmail} handlePassword={handlePassword} handleRegister={handleRegister}></Register>
                         }
                         <div>
                             {error && <p className="text-danger">{error}</p>}

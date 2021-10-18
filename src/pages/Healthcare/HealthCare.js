@@ -1,9 +1,12 @@
 import React from 'react';
+import "./HealthCare.css"
 
 const HealthCare = () => {
     return (
         <div>
-            <h1>Healthcare</h1>
+            <div className="container">
+
+            </div>
         </div>
     );
 };

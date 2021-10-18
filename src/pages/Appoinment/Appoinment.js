@@ -30,10 +30,10 @@ const Appoinment = () => {
                     <div className="cover-details mb-md-0 mb-4">
                         <h2>{doctor?.name}</h2>
                         <hr />
-                        <h4>Speciality: {doctor?.specialty}</h4>
-                        <h4>Certifications: {doctor?.certifications}</h4>
-                        <h4>Graduated: {doctor?.graduate}</h4>
-                        <h5>Weekly Schedule: {doctor?.schedule}</h5>
+                        <h4><span className="fw-bold">Speciality: </span>{doctor?.specialty}</h4>
+                        <h4><span className="fw-bold">Certifications: </span>{doctor?.certifications}</h4>
+                        <h4><span className="fw-bold">Graduated: </span>{doctor?.graduate}</h4>
+                        <h5><span className="fw-bold">Weekly Schedule: </span>{doctor?.schedule}</h5>
                         <p>{doctor?.time}</p>
                         <hr />
                         <h3>Appoinment Charge: ${doctor?.charge}</h3>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
-const Register = ({ handleEmail, handlePassword, handleRegister }) => {
+const Register = ({ handleName, handleEmail, handlePassword, handleRegister }) => {
     return (
         <div>
             <Form onSubmit={handleRegister}>
                 <h3>Please Register</h3>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Label>Your name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter your name" />
+                    <Form.Control onBlur={handleName} type="text" placeholder="Enter your name" />
                     <Form.Text className="text-muted">
                         (Optional)
                     </Form.Text>

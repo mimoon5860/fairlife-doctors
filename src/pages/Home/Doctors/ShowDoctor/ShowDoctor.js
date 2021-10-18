@@ -6,9 +6,9 @@ const ShowDoctor = ({ doctor }) => {
     const { name, id, img, specialty, schedule, time, charge, details } = doctor;
     return (
         <div>
-            <Col className="">
+            <Col>
                 <Card className="card ">
-                    <Card.Img className="px-3 pt-3" variant="top" src={img} />
+                    <Card.Img className="px-3 pt-3 rounded-circle" variant="top" src={img} />
                     <Card.Body>
                         <Card.Title className="fw-bold p-">{name}</Card.Title>
                         <Card.Title className=" p-"><span>Speciality: </span>{specialty} </Card.Title>
@@ -17,7 +17,6 @@ const ShowDoctor = ({ doctor }) => {
                         <div>
                             <h5>Appointment Charge: ${charge}</h5>
                             <h5>Time Schedule: {schedule}, {time}</h5>
-                            <p title={details}><span className="fw-bold"> About:</span> {details.slice(0, 50)}...</p>
                         </div>
                     </Card.Body>
                 </Card>
