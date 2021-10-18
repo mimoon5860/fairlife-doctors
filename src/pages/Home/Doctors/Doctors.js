@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
+import Fetch from '../../../Hooks/Fetch/Fetch';
 import ShowDoctor from './ShowDoctor/ShowDoctor';
 
 const Doctors = () => {
-    const [doctors, setDoctors] = useState([]);
-
-    useEffect(() => {
-        fetch("./data.json")
-            .then(res => res.json())
-            .then(data => setDoctors(data))
-    }, [])
-
-    console.log(doctors)
+    const doctors = Fetch();
     return (
         <div className="doctors-wrapper" id="doctors">
             <h2 className="text-center pt-5 pb-2 text-uppercase border-bottom border-3 fw-bold">Doctor's</h2>

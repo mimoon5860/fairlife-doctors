@@ -10,6 +10,7 @@ import Vaccine from './pages/Covid19Vaccine/Vaccine';
 import HealthCare from './pages/Healthcare/HealthCare';
 import Appoinment from './pages/Appoinment/Appoinment';
 import AuthProvidor from './Hooks/AuthProvidor/AuthProvidor';
+import PrivateRoute from './Hooks/PrivateRoute/PrivateRoute';
 
 const style = {
   fontFamily: "'Lato', sans- serif"
@@ -37,15 +38,15 @@ function App() {
             <Route path="/contact">
               <Contact></Contact>
             </Route>
-            <Route path="/vaccine">
+            <PrivateRoute path="/vaccine">
               <Vaccine></Vaccine>
-            </Route>
-            <Route path="/healthcare">
+            </PrivateRoute>
+            <PrivateRoute path="/healthcare">
               <HealthCare></HealthCare>
-            </Route>
-            <Route path="/appoinment/:id">
+            </PrivateRoute>
+            <PrivateRoute path="/appoinment/:id">
               <Appoinment></Appoinment>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <Error></Error>
             </Route>

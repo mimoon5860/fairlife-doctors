@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import Authinit from "../Firebase/firebase.init";
 Authinit();
@@ -11,34 +11,18 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const googleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
-            });
+        return signInWithPopup(auth, googleProvider)
+
     }
 
+    const emailRegister = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
 
-    const logOut = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-            setUser({})
-        }).catch((error) => {
-            // An error happened.
-        });
+    }
+
+    const emailSignIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+
     }
 
     useEffect(() => {
@@ -50,11 +34,19 @@ const useFirebase = () => {
     }, [])
 
 
-
-
+    const logOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            setUser({})
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
     return {
         user,
         googleSignIn,
+        emailRegister,
+        emailSignIn,
         logOut
     }
 }
