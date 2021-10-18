@@ -1,0 +1,19 @@
+.about-wrapper{
+    background-image: url(../../images/about-contact-bg.svg);
+    background-attachment: fixed;
+}
+.about-card{
+    background-color: #2E75B6;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 30px 0 rgba(0, 0, 0, 0.50);
+}
+.info-bg{
+    background-color: #EDF5FE;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 30px 0 rgba(0, 0, 0, 0.50);
+}
+.about-owner{
+    background-color: #E2F0D9;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 30px 0 rgba(0, 0, 0, 0.50);
+}
+.about-owner img{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 30px 0 rgba(0, 0, 0, 0.50);
+}

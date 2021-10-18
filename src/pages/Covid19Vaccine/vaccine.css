@@ -1,10 +1,21 @@
+.vaccine-bg{
+    background-image: url(../../images/vaccine-bg.svg);
+    background-size: cover;
+    background-attachment: fixed;
+}
 .vaccine{
     background-color: #006778;
-    /* color: #006778; */
+    box-shadow: 0px 0px 18px 5px rgba(41,126,166,0.66);
 }
-.vaccine-card p, .vaccine-card i{
-    color: #006778;
+.vaccine-card p{
+    color: white;
 
+}
+.vaccine-card i{
+    color: #006778;
+}
+.vaccine-card h3{
+    color: white;
 }
 .i{
     font-size: 50px;

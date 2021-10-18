@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const Vaccine = () => {
     return (
-        <div>
-            <div className="container">
-                <div className="vaccine rounded my-5 d-flex justify-content-around">
+        <div className="vaccine-bg">
+            <div className="container pt-5">
+                <div className="vaccine rounded my-5 d-flex flex-md-row flex-column justify-content-around">
                     <div className="p-4">
                         <h2 className="fw-bold text-white pb-3 border-bottom border-5">Getting Your Vaccine</h2>
                         <div className="d-flex pt-3 ps-md-3 flex-column gap-4">
@@ -19,12 +19,12 @@ const Vaccine = () => {
                             <Button className="border-white text-white" variant="outline-success">Should I get vaccinated if I've had COVID-19?</Button>
                         </div>
                     </div>
-                    <div className="my-5 p-2 rounded bg-white">
+                    <div className="my-5 p-2 mx-2 rounded bg-white">
                         <div className="d-flex ps-4 justify-content-between">
                             <h2 className="pt-4 fw-bold">Get Vaccinated</h2>
                             <img width="100px" src={img} alt="" />
                         </div>
-                        <div className="px-5 py-3 fw-bold">
+                        <div className="px-2 px-md-5 py-3 fw-bold">
                             <h5 className="pb-4">Find a free COVID-19 vaccine near you.</h5>
 
                             <Link to="/"><i className="fas fs-4 pe-2 fa-search"></i>Find a vaccine near you</Link>
@@ -37,7 +37,7 @@ const Vaccine = () => {
                         </div>
                     </div>
                 </div>
-                <div className="d-flex vaccine-card justify-content-between pb-5">
+                <div className="d-flex flex-column gap-4 flex-md-row vaccine-card justify-content-between pb-5">
                     <div className="d-flex flex-column align-items-center">
                         <i className="far i py-3 fa-list-alt"></i>
                         <h3 className="fw-bold mb-0">Your Vaccination</h3>
