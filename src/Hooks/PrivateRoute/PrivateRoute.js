@@ -6,6 +6,8 @@ import "./Spinner.css"
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
+
+    // Loading for wait until load user data from firebase
     if (isLoading) {
         return (
             <div className="spinner-bg">
@@ -17,6 +19,7 @@ const PrivateRoute = ({ children, ...rest }) => {
             </div>
         );
     }
+
     return (
         <Route
             {...rest}
@@ -30,7 +33,6 @@ const PrivateRoute = ({ children, ...rest }) => {
                     />
             }
         >
-
         </Route>
     );
 };

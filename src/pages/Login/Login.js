@@ -19,6 +19,8 @@ const Login = () => {
 
     const { user, setIsLoading, googleSignIn, emailRegister, updateUser, emailSignIn } = useAuth();
 
+
+    // Handle google sign in 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
@@ -29,6 +31,8 @@ const Login = () => {
             }).finally(() => setIsLoading(false));
     }
 
+
+    // handle user input 
     const handleEmail = (event) => {
         setEmail(event.target.value);
     }
@@ -39,6 +43,8 @@ const Login = () => {
         setName(event.target.value);
     }
 
+
+    // handle email password reg 
     const handleRegister = (event) => {
         event.preventDefault();
         if (password.length >= 6) {
@@ -66,6 +72,8 @@ const Login = () => {
         }
     }
 
+
+    // handle email pass login 
     const handleSignIn = (event) => {
         event.preventDefault();
         if (password.length >= 6) {
@@ -84,6 +92,7 @@ const Login = () => {
     }
 
 
+    // toggle for login register 
     const handleToggle = event => {
         setToggle(event.target.checked);
         setError("")

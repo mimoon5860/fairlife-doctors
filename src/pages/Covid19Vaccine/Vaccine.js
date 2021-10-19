@@ -29,9 +29,9 @@ const Vaccine = () => {
 
                             <Link to="/"><i className="fas fs-4 pe-2 fa-search"></i>Find a vaccine near you</Link>
 
-                            <p className="py-3 mb-0"><i class="fas  fs-4 pe-2  fa-phone"></i>Call 1-800-XXX-XXXX </p>
+                            <p className="py-3 mb-0"><i className="fas  fs-4 pe-2  fa-phone"></i>Call 1-800-XXX-XXXX </p>
 
-                            <p><i class="fas fs-4 pe-2 fa-envelope-open-text"></i>Text your zip code to 43XXXX</p>
+                            <p><i className="fas fs-4 pe-2 fa-envelope-open-text"></i>Text your zip code to 43XXXX</p>
 
                             <small>Message & data rates may apply. <Link to="/vaccine">CDC Privacy Policy</Link></small>
                         </div>

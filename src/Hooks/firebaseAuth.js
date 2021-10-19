@@ -11,30 +11,37 @@ const useFirebase = () => {
 
     const googleProvider = new GoogleAuthProvider();
 
+
+    // Google sign in  
     const googleSignIn = () => {
         setIsLoading(false);
         return signInWithPopup(auth, googleProvider)
 
     }
 
+    // Email Password Registation 
     const emailRegister = (email, password) => {
         setIsLoading(false);
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
 
+    // Email Password Sign in 
     const emailSignIn = (email, password) => {
         setIsLoading(false);
         return signInWithEmailAndPassword(auth, email, password)
 
     }
 
+    // Update user name 
     const updateUser = (name) => {
         return updateProfile(auth.currentUser, {
             displayName: name
         })
     }
 
+
+    // get current user for state change 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -49,6 +56,7 @@ const useFirebase = () => {
     }, [])
 
 
+    // for Log out user
     const logOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.

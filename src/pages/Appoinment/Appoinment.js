@@ -21,7 +21,6 @@ const Appoinment = () => {
             setAppoinment(true);
         }
     }
-    console.log(appoinment)
 
     return (
         <div className="appoinment-bg">
