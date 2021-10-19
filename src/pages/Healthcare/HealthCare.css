@@ -1,0 +1,17 @@
+.healthcare-bg{
+    background-image: url(../../images/healthcare-bg.svg);
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.healthcare-img{
+    border-radius: 10px 10px 0 0;
+}
+.healthcare-cover{
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 30px 0 rgba(0, 0, 0, 0.50);
+}
+.healthcare-text{
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6), 0 12px 30px 0 rgba(0, 0, 0, 0.50);
+}

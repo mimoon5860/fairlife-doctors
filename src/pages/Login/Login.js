@@ -96,7 +96,7 @@ const Login = () => {
                 {user.email ?
                     <div className="py-5 text-center">
                         <h1 className=" text-success py-5">You Already Logged in!</h1>
-                        <Link className="btn btn-success" to="/">Back To Home</Link>
+                        <Link className="btn btn-success" to="/"><i className="fas fa-home"></i> Back To Home</Link>
                     </div>
                     :
                     <div className="col-md-3 mx-auto my-md-5 p-3 my-3 border rounded form">
