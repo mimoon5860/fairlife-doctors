@@ -1,9 +1,22 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../useAuth';
+import "./Spinner.css"
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
+    if (isLoading) {
+        return (
+            <div className="spinner-bg">
+                <div className="container">
+                    <div className="d-flex align-items-center justify-content-center pt-5">
+                        <Spinner animation="border" variant="warning" />
+                    </div>
+                </div>
+            </div>
+        );
+    }
     return (
         <Route
             {...rest}

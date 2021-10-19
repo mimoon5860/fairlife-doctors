@@ -16,9 +16,8 @@ const Login = () => {
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home';
-    // console.log(location.state.from)
 
-    const { user, googleSignIn, emailRegister, updateUser, emailSignIn } = useAuth();
+    const { user, setIsLoading, googleSignIn, emailRegister, updateUser, emailSignIn } = useAuth();
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -27,7 +26,7 @@ const Login = () => {
                 history.push(redirect_uri)
             }).catch((error) => {
                 setError(error.message);
-            });
+            }).finally(() => setIsLoading(false));
     }
 
     const handleEmail = (event) => {
@@ -53,17 +52,18 @@ const Login = () => {
                         }).catch((error) => {
                             setError(error?.massage)
                         });
-                    console.log(name)
                 })
                 .catch((error) => {
                     setError(error.message);
+                })
+                .finally(() => {
+                    setIsLoading(false)
                 });
+
         }
         else {
             setError("Password must be six length")
         }
-
-
     }
 
     const handleSignIn = (event) => {
@@ -76,7 +76,8 @@ const Login = () => {
                 })
                 .catch((error) => {
                     setError(error.message);
-                });
+                })
+                .finally(() => setIsLoading(false));
         } else {
             setError("Password must be six length")
         }

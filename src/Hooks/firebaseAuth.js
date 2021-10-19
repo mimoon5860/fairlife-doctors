@@ -7,20 +7,24 @@ const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
 
     const googleSignIn = () => {
+        setIsLoading(false);
         return signInWithPopup(auth, googleProvider)
 
     }
 
     const emailRegister = (email, password) => {
+        setIsLoading(false);
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
 
     const emailSignIn = (email, password) => {
+        setIsLoading(false);
         return signInWithEmailAndPassword(auth, email, password)
 
     }
@@ -32,11 +36,16 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+            } else {
+                setUser({})
             }
+            setIsLoading(false);
         });
+
+        return () => unsubscribe;
     }, [])
 
 
@@ -46,7 +55,7 @@ const useFirebase = () => {
             setUser({})
         }).catch((error) => {
             // An error happened.
-        });
+        }).finally(() => setIsLoading(false));
     }
     return {
         user,
@@ -54,6 +63,8 @@ const useFirebase = () => {
         emailRegister,
         emailSignIn,
         updateUser,
+        isLoading,
+        setIsLoading,
         logOut
     }
 }

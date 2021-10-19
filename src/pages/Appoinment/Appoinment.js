@@ -51,7 +51,7 @@ const Appoinment = () => {
                     </div>
                     <div className="col-md-6 p-2 px-md-5" id="appoinment-form">
                         {appoinment ?
-                            <div className="py-5 px-md-5 rounded appoinment-form">
+                            <div className="py-5 px-3 px-md-5 rounded appoinment-form">
                                 <h2 className="py-2"><i className="fas fa-check-circle text-success"></i>  Thank You for Take an Appoinment</h2>
                                 <h3 className="py-3"><i className="fas text-warning fa-recycle"></i>  Appoinment Processing!</h3>
                                 <p>We will let you know when it will be confirm... <i className="far text-success fa-smile"></i></p>

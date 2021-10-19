@@ -1,0 +1,5 @@
+.spinner-bg{
+    background-image: url("../../images//loginbg2.png"); 
+    background-attachment: fixed;
+    min-height: 85vh;
+}
