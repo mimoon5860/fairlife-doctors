@@ -22,7 +22,7 @@ const Vaccine = () => {
                     <div className="my-5 p-2 mx-2 rounded bg-white">
                         <div className="d-flex ps-4 justify-content-between">
                             <h2 className="pt-4 fw-bold">Get Vaccinated</h2>
-                            <img width="100px" src={img} alt="" />
+                            <img width="100px" height="90px" src={img} alt="" />
                         </div>
                         <div className="px-2 px-md-5 py-3 fw-bold">
                             <h5 className="pb-4">Find a free COVID-19 vaccine near you.</h5>

@@ -15,6 +15,7 @@ const Login = () => {
     const [error, setError] = useState("");
     const location = useLocation();
     const history = useHistory();
+
     const redirect_uri = location.state?.from || '/home';
 
     const { user, setIsLoading, googleSignIn, emailRegister, updateUser, emailSignIn } = useAuth();

@@ -31,7 +31,10 @@ const Header = () => {
                                     <Nav.Link as={NavLink} activeClassName="active" className="button" to="/login"><i className="fas fa-sign-in-alt"></i> Login</Nav.Link>
                                     :
                                     <div>
-                                        <p className="text-white mt-3 mt-md-0 mb-0 d-md-inline me-md-3"> Signed in as: <span className="fw-bold text-warning">{user.displayName}</span></p>
+                                        <p className="text-white mt-3 mt-md-0 mb-0 d-md-inline me-md-3"> Hello: <span className="fw-bold text-warning">{
+                                            user.displayName ? user.displayName :
+                                                user.email.substring(0, user.email.lastIndexOf("@"))
+                                        }</span></p>
                                         <button as={NavLink} onClick={logOut} className="button"><i className="fas fa-sign-out-alt"></i> Logout</button>
                                     </div>
                             }
